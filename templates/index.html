@@ -1,0 +1,107 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Resume Screening System</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">
+            <h2>AI Resume Screening</h2>
+        </div>
+
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="/login/">Login</a></li>
+            <li><a href="/register/">Register</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+
+        <div class="hero-text">
+
+            <h1>AI Powered Smart Resume Screening System</h1>
+
+            <p>
+                Upload resumes, analyze candidate skills,
+                compare with Job Description,
+                and rank applicants automatically using Artificial Intelligence.
+            </p>
+
+            <button>Get Started</button>
+
+        </div>
+
+        <div class="hero-image">
+            <img src="{% static 'images/resume.png' %}" alt="Resume">
+        </div>
+
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+
+        <h2>Our Features</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>📄 Resume Upload</h3>
+                <p>Upload PDF and DOCX resumes easily.</p>
+            </div>
+
+            <div class="card">
+                <h3>🤖 AI Resume Parsing</h3>
+                <p>Extract Name, Skills, Education and Experience automatically.</p>
+            </div>
+
+            <div class="card">
+                <h3>📊 Candidate Ranking</h3>
+                <p>Rank candidates based on AI matching score.</p>
+            </div>
+
+            <div class="card">
+                <h3>📈 Dashboard</h3>
+                <p>View analytics, shortlisted candidates and reports.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- About -->
+    <section class="about">
+
+        <h2>About Project</h2>
+
+        <p>
+            AI Resume Screening System helps HR teams
+            automatically shortlist the best candidates by comparing
+            resumes with the job description using Artificial Intelligence
+            and Natural Language Processing.
+        </p>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            © 2026 AI Resume Screening System | Developed using Django, HTML, CSS & AI
+        </p>
+
+    </footer>
+
+</body>
+</html>

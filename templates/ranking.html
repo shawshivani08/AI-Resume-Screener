@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Candidate Ranking</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+<div class="result-container">
+
+<h1>🏆 Candidate Ranking</h1>
+
+<table border="1" cellspacing="0" cellpadding="10">
+
+    <tr>
+        <th>Rank</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Score</th>
+        <th>Status</th>
+        <th>Resume</th>
+    </tr>
+
+    {% for resume in resumes %}
+
+    <tr>
+
+        <td>
+            {% if forloop.first %}
+                🥇
+            {% else %}
+                {{ forloop.counter }}
+            {% endif %}
+        </td>
+
+        <td>{{ resume.candidate_name }}</td>
+
+        <td>{{ resume.email }}</td>
+
+        <td>{{ resume.score }}%</td>
+
+        <td>
+            {% if forloop.first %}
+                🏆 Top Candidate
+            {% elif resume.score >= 80 %}
+                🟢 Selected
+            {% elif resume.score >= 60 %}
+                🟡 Shortlisted
+            {% else %}
+                🔴 Rejected
+            {% endif %}
+        </td>
+
+        <td>
+            <a href="{{ resume.resume.url }}" target="_blank">
+                📄 View Resume
+            </a>
+        </td>
+
+    </tr>
+
+    {% empty %}
+
+    <tr>
+        <td colspan="6">No resumes uploaded.</td>
+    </tr>
+
+    {% endfor %}
+
+</table>
+
+<br>
+
+<a href="{% url 'dashboard' %}">
+    <button>⬅ Back to Dashboard</button>
+</a>
+
+</div>
+
+</body>
+</html>

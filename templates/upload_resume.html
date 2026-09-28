@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Resume</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+<div class="login-box">
+
+    <h2>Upload Resume</h2>
+
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <input type="text"
+               name="candidate_name"
+               placeholder="Candidate Name"
+               required>
+
+        <input type="email"
+               name="email"
+               placeholder="Candidate Email"
+               required>
+
+        <textarea
+            name="job_description"
+            rows="8"
+            placeholder="Paste Job Description here..."
+            required></textarea>
+
+        <input type="file"
+               name="resume"
+               accept=".pdf,.doc,.docx"
+               required>
+
+        <button type="submit">Upload Resume</button>
+
+    </form>
+
+</div>
+
+</body>
+</html>

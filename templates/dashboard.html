@@ -1,0 +1,112 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<h1>🤖 AI Resume Screening Dashboard</h1>
+
+<p>
+Welcome {{ request.user.first_name }}
+</p>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<div class="dashboard">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+
+        <h2>AI Resume</h2>
+
+        <ul>
+            <li><a href="{% url 'dashboard' %}">🏠 Dashboard</a></li>
+
+            <li><a href="{% url 'upload' %}">📄 Upload Resume</a></li>
+
+            <li><a href="#">📝 Job Description</a></li>
+
+            <li><a href="#">📊 Candidate Ranking</a></li>
+
+            <li><a href="{% url 'logout' %}">🚪 Logout</a></li>
+            <li><a href="{% url 'job_description' %}">📝 Job Description</a></li>
+        </ul>
+
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+
+        <h1>Welcome {{ request.user.first_name }}</h1>
+
+        <p>AI Powered Smart Resume Screening System</p>
+
+        <div class="cards">
+
+            <!-- Resume Upload -->
+            <div class="card">
+
+                <h2>📄 Resume Upload</h2>
+
+                <p>Upload candidate resumes.</p>
+
+                <br>
+
+                <a href="{% url 'upload' %}">
+                    <button>Upload Resume</button>
+                </a>
+
+            </div>
+
+            <!-- AI Parsing -->
+            <div class="cards">
+
+    <div class="card">
+        <h2>{{ total }}</h2>
+        <p>Total Resumes</p>
+    </div>
+
+    <div class="card">
+        <h2>{{ selected }}</h2>
+        <p>Selected</p>
+    </div>
+
+    <div class="card">
+        <h2>{{ shortlisted }}</h2>
+        <p>Shortlisted</p>
+    </div>
+
+    <div class="card">
+        <h2>{{ rejected }}</h2>
+        <p>Rejected</p>
+    </div>
+
+</div>
+
+            <!-- Ranking -->
+            <div class="card">
+
+                <h2>📊 Candidate Ranking</h2>
+                <a href="{% url 'ranking' %}">
+               📊 Candidate Ranking
+           </a>
+
+                <p>Rank candidates using AI Score.</p>
+                <a href="{% url 'upload' %}">
+    <button>📄 Upload New Resume</button>
+</a>
+
+<a href="{% url 'ranking' %}">
+    <button>🏆 View Ranking</button>
+</a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
